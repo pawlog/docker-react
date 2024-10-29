@@ -1,0 +1,13 @@
+nama: Deploy Fronted
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v2
+      - run: docker build -t pawlog/react-test -f Dockerfile.dev .
+      - run: docker run -e CI=true pawlog/react-test npm test
