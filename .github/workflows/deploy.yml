@@ -1,4 +1,4 @@
-nama: Deploy Fronted
+name: Deploy Fronted
 on:
   push:
     branches:
